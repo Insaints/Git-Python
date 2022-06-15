@@ -23,5 +23,4 @@ for i in range(int(input())):
 
     result_list = quick_merge(result_list, num)
 
-
 print(*result_list)
