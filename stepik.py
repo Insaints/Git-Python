@@ -9,7 +9,7 @@ def is_valid_password(password):
     a = s[0]
     b = int(s[1])
     c = int(s[2])
-    if a != a[::-1] and c % 2 != 0:
+    if a != a[::-1] or c % 2 != 0:
         flag2 = False
     if b < 2:
         flag3 = False
@@ -21,3 +21,4 @@ def is_valid_password(password):
 psw = input()
 
 print(is_valid_password(psw))
+
