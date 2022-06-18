@@ -18,8 +18,6 @@ def is_valid_password(password):
             flag4 = False
     return flag1 and flag2 and flag3 and flag4
 
-# считываем данные
 psw = input()
 
-# вызываем функцию
 print(is_valid_password(psw))
