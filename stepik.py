@@ -1,26 +1,25 @@
-def quick_merge(list1, list2):
-    result = []
-    p1 = 0
-    p2 = 0
-    while p1 < len(list1) and p2 < len(list2):
-        if list1[p1] <= list2[p2]:
-            result.append(list1[p1])
-            p1 += 1
-        else:
-            result.append(list2[p2])
-            p2 += 1
-    if p1 < len(list1):
-        result += list1[p1:]
-    if p2 < len(list2):
-        result += list2[p2:]
+def is_valid_password(password):
+    s = psw.split(':')
+    flag1 = True
+    flag2 = True
+    flag3 = True
+    flag4 = True
+    if len(s) != 3:
+        flag1 = False
+    a = s[0]
+    b = int(s[1])
+    c = int(s[2])
+    if a != a[::-1] and c % 2 != 0:
+        flag2 = False
+    if b < 2:
+        flag3 = False
+    for i in range(2, b):
+        if b % i == 0:
+            flag4 = False
+    return flag1 and flag2 and flag3 and flag4
 
-    return result
+# считываем данные
+psw = input()
 
-result_list = []
-
-for i in range(int(input())):
-    num = [int(ii) for ii in input().split()]
-
-    result_list = quick_merge(result_list, num)
-
-print(*result_list)
+# вызываем функцию
+print(is_valid_password(psw))
